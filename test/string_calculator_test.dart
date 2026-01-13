@@ -20,5 +20,9 @@ void main() {
     test('returns sum of 2 comma separated numbers', () {
       expect(calculator.add('1,5'), equals(6));
     });
+
+    test('returns sum of multiple numbers', () {
+      expect(calculator.add('1,3,5,7,8'), equals(24));
+    });
   });
 }
