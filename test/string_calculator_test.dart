@@ -32,5 +32,9 @@ void main() {
     test('handles other delimiters in numbers', () {
       expect(calculator.add('//;\n1;2'), equals(3));
     });
+
+    test('throws exception for negative number', () {
+      expect(() => calculator.add('1,2,3,-4,5'), throwsException);
+    });
   });
 }
