@@ -28,5 +28,9 @@ void main() {
     test('handles new lines in numbers', () {
       expect(calculator.add('1\n2,3'), equals(6));
     });
+
+    test('handles other delimiters in numbers', () {
+      expect(calculator.add('//;\n1;2'), equals(3));
+    });
   });
 }
