@@ -24,5 +24,9 @@ void main() {
     test('returns sum of multiple numbers', () {
       expect(calculator.add('1,3,5,7,8'), equals(24));
     });
+
+    test('handles new lines in numbers', () {
+      expect(calculator.add('1\n2,3'), equals(6));
+    });
   });
 }
