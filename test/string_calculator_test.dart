@@ -36,5 +36,15 @@ void main() {
     test('throws exception for negative number', () {
       expect(() => calculator.add('1,2,3,-4,5'), throwsException);
     });
+
+    test(
+      'throws exception multiple negative numbers & show in exception message',
+      () {
+        expect(
+          () => calculator.add('1,-2,3,-4,5,-6'),
+          throwsA(predicate((e) => e.toString().contains('-2,-4,-6'))),
+        );
+      },
+    );
   });
 }
