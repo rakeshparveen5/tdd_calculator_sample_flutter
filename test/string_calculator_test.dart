@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tdd_calculator_sample_flutter/exceptions/negative_number_exception.dart';
 import 'package:tdd_calculator_sample_flutter/string_calculator.dart';
 
 void main() {
@@ -34,7 +35,10 @@ void main() {
     });
 
     test('throws exception for negative number', () {
-      expect(() => calculator.add('1,2,3,-4,5'), throwsException);
+      expect(
+        () => calculator.add('1,2,3,-4,5'),
+        throwsA(isA<NegativeNumberException>()),
+      );
     });
 
     test(
