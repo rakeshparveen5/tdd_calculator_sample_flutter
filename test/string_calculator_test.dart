@@ -46,7 +46,13 @@ void main() {
       () {
         expect(
           () => calculator.add('1,-2,3,-4,5,-6'),
-          throwsA(predicate((e) => e.toString().contains('-2,-4,-6'))),
+          throwsA(
+            isA<NegativeNumberException>().having(
+              (e) => e.toString(),
+              'message',
+              contains('-2,-4,-6'),
+            ),
+          ),
         );
       },
     );
