@@ -1,3 +1,5 @@
 class StringCalculator {
-  // TODO: Create class StringCalculator
+  int add(String numbers) {
+    return 0;
+  }
 }
